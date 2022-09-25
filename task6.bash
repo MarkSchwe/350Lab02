@@ -1,4 +1,4 @@
-#!bin/sh
+#!/bin/sh
 
 echo Input an odd number greater than 3:
 read num
@@ -15,6 +15,7 @@ fi
 for i in $( seq 1 $num );
 do
 space=` expr $num - $i`
+if [ `expr $i % 2` = 1 ]; then
   for x in $( seq 0 `expr $space / 2` );
     do
       echo -n " "
@@ -24,3 +25,33 @@ space=` expr $num - $i`
       echo -n "*"
     done
   for z in $( seq 0 `expr $space / 2` );
+    do
+      echo -n " "
+    done
+  echo -n "\n"
+fi
+done
+
+num2=$num
+for i in $( seq 0 $num);
+do
+  num2=`expr $num2 - 1`
+  space=`expr $num - $num2`
+  if [ `expr $i % 2` = 1 ]; then
+    for x in $( seq 0 `expr $space / 2` );
+      do
+        echo -n " "
+      done
+    for y in $( seq 1 $num2 );
+      do
+        echo -n "*"
+      done
+    for z in $( seq 0 `expr $space / 2` );
+      do
+        echo -n " "
+      done
+    echo -n "\n"
+  fi
+done
+  
+exit 0
