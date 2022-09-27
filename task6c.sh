@@ -12,7 +12,7 @@ else
   echo "$num is a valid response"
 fi
 
-echo Input a number for the base:
+echo "Input a number for the base:"
 read baseNum
 
 
